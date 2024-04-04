@@ -16,7 +16,7 @@ export default function Header() {
 
 
   return (
-    <div className="font-montserrat-600">
+    <div className="font-bold">
       <div className="navbar bg-base-100 xl:hidden">
         <div className="navbar-start">
           <div className="dropdown">
@@ -68,13 +68,17 @@ export default function Header() {
           </div>
         </div>
         <div className="navbar-end">
-          <a className="xl:hidden btn btn-ghost p-1 text-xl">Ameley Kwei-Armah</a>
+          <a className="xl:hidden btn btn-ghost p-1 text-xl bg-gradient-to-r from-black to-slateBlue text-transparent bg-clip-text">
+            Ameley Kwei-Armah
+          </a>
         </div>
       </div>
 
       <nav className="hidden xl:flex justify-between px-10 py-5 font-montserrat-700">
         <div>
-          <h1 className="">Ameley Kwei-Armah</h1>
+          <h1 className="bg-gradient-to-r from-black via-slateBlue to-lavender text-transparent bg-clip-text">
+            Ameley Kwei-Armah
+          </h1>
         </div>
         <div>
           <ul className="flex">
