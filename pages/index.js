@@ -1,16 +1,33 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
+import { createClient } from "contentful";
+import Hero from "@/components/Hero";
 
-const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+  });
+
+  const res = await client.getEntries({
+    content_type: "heroSection",
+  });
+
+  return {
+    props: {
+      theHeroSection: res.items,
+    },
+    revalidate: 10,
+  };
+}
+
+export default function Home({theHeroSection}) {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-       <h1 className="text-green-500">Hello World</h1>
+      <div className="">
+      {theHeroSection.map((theHero) => (
+          <Hero key={theHero.sys.id} theHero={theHero} />
+        ))}
       </div>
-    </main>
+   
   );
 }
