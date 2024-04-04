@@ -5,32 +5,40 @@ import localFont from "next/font/local";
 const montserrat = localFont({
   src: [
     {
-      path: "../public/fonts/Montserrat-Bold.ttf",
-      weight: "700",
-    },
-    {
       path: "../public/fonts/Montserrat-Black.ttf",
       weight: "900",
     },
     {
       path: "../public/fonts/Montserrat-ExtraBold.ttf",
+      weight: "800",
+    },
+    {
+      path: "../public/fonts/Montserrat-Bold.ttf",
       weight: "700",
+    },
+    {
+      path: "../public/fonts/Montserrat-SemiBold.ttf",
+      weight: "600",
     },
     {
       path: "../public/fonts/Montserrat-Medium.ttf",
-      weight: "700",
+      weight: "500",
     },
     {
       path: "../public/fonts/Montserrat-Regular.ttf",
-      weight: "700",
+      weight: "400",
     },
     {
       path: "../public/fonts/Montserrat-Light.ttf",
-      weight: "700",
+      weight: "300",
     },
     {
       path: "../public/fonts/Montserrat-ExtraLight.ttf",
-      weight: "700",
+      weight: "200",
+    },
+    {
+      path: "../public/fonts/Montserrat-Thin.ttf",
+      weight: "100",
     },
   ],
 

@@ -15,7 +15,12 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-montserrat)"],
       },
+      colours: {
+        slateBlue: "#7D6AE9",
+        lavender: "#EDE9FB",
+        frenchGrey: "#D0CDD1",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };
