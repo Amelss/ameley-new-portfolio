@@ -1,8 +1,22 @@
 import React from 'react'
 
 export default function Header() {
+
+   const handleSmoothScroll = (event) => {
+     event.preventDefault();
+     const targetId = event.target.getAttribute("href").substring(1);
+     const targetElement = document.getElementById(targetId);
+     if (targetElement) {
+       targetElement.scrollIntoView({
+         behavior: "smooth",
+         block: "start",
+       });
+     }
+   };
+
+
   return (
-    <div className='font-montserrat-600'>
+    <div className="font-montserrat-600">
       <div className="navbar bg-base-100 xl:hidden">
         <div className="navbar-start">
           <div className="dropdown">
@@ -31,19 +45,30 @@ export default function Header() {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-56"
             >
               <li>
-                <a>Homepage</a>
+                <a href="#hero" onClick={handleSmoothScroll}>
+                  Home
+                </a>
               </li>
               <li>
-                <a>Portfolio</a>
+                <a href="#about" onClick={handleSmoothScroll}>
+                  About
+                </a>
               </li>
               <li>
-                <a>About</a>
+                <a href="#projects" onClick={handleSmoothScroll}>
+                  Projects
+                </a>
+              </li>
+              <li>
+                <a href="#contact" onClick={handleSmoothScroll}>
+                  Contact
+                </a>
               </li>
             </ul>
           </div>
         </div>
         <div className="navbar-end">
-          <a className="xl:hidden btn btn-ghost text-xl">Ameley Kwei-Armah</a>
+          <a className="xl:hidden btn btn-ghost p-1 text-xl">Ameley Kwei-Armah</a>
         </div>
       </div>
 
@@ -54,16 +79,24 @@ export default function Header() {
         <div>
           <ul className="flex">
             <li className="ml-5">
-              <a>Home</a>
+              <a href="#hero" onClick={handleSmoothScroll}>
+                Home
+              </a>
             </li>
             <li className="ml-5">
-              <a>About</a>
+              <a href="#about" onClick={handleSmoothScroll}>
+                About
+              </a>
             </li>
             <li className="ml-5">
-              <a>Projects</a>
+              <a href="#projects" onClick={handleSmoothScroll}>
+                Projects
+              </a>
             </li>
             <li className="ml-5">
-              <a>Contact</a>
+              <a href="#contact" onClick={handleSmoothScroll}>
+                Contact
+              </a>
             </li>
           </ul>
         </div>
