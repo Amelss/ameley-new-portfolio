@@ -5,7 +5,7 @@ export default function Contact() {
     <div id="contact" className="px-5 rounded-lg xl:w-[800px] xl:mx-auto py-14">
       <section className=" bg-white rounded-lg shadow-lg">
         <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center bg-gradient-to-r from-black via-slateBlue to-lavender text-transparent bg-clip-text ">
+          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center bg-gradient-to-r from-black to-slateBlue text-transparent bg-clip-text ">
             Get In Touch
           </h2>
           <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">

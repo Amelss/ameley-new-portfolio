@@ -10,7 +10,7 @@ export default function Hero({ theHero }) {
     >
       <div>
         <h3 className="font-bold">{intro}</h3>
-        <h1 className="font-bold text-2xl xl:text-5xl bg-gradient-to-r from-black via-slateBlue to-lavender text-transparent bg-clip-text">
+        <h1 className="font-bold text-2xl xl:text-5xl bg-gradient-to-r from-black to-slateBlue text-transparent bg-clip-text">
           {title}
         </h1>
         <p className="xl:w-[500px] py-8 xl:text-lg">{subtitle}</p>

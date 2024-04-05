@@ -70,7 +70,7 @@ export default function Header() {
         <div className="navbar-end">
           <a
             href="/"
-            className="xl:hidden btn btn-ghost p-1 text-xl bg-gradient-to-r from-black via-slateBlue to-lavender text-transparent bg-clip-text"
+            className="xl:hidden btn btn-ghost p-1 text-xl bg-gradient-to-r from-black to-slateBlue text-transparent bg-clip-text"
           >
             Ameley Kwei-Armah
           </a>
@@ -79,7 +79,7 @@ export default function Header() {
 
       <nav className="hidden xl:flex justify-between px-10 py-5 font-montserrat-700">
         <div>
-          <h1 className="bg-gradient-to-r from-black via-slateBlue to-lavender text-transparent bg-clip-text">
+          <h1 className="bg-gradient-to-r from-black to-slateBlue text-transparent bg-clip-text">
             <a href="/"> Ameley Kwei-Armah</a>
           </h1>
         </div>
@@ -108,6 +108,8 @@ export default function Header() {
           </ul>
         </div>
       </nav>
+
+     
     </div>
   );
 }

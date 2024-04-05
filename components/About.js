@@ -11,7 +11,7 @@ export default function About({ myInfo }) {
   return (
     <div className="pt-20 pb-10 px-3 xl:px-20 text-center" id="about">
       <h1 className="font-bold text-sm">{aboutTitle}</h1>
-      <h3 className="font-bold bg-gradient-to-r from-black via-slateBlue to-lavender text-transparent bg-clip-text text-2xl xl:text-3xl py-5">
+      <h3 className="font-bold bg-gradient-to-r from-black to-slateBlue text-transparent bg-clip-text text-2xl xl:text-3xl py-5">
         {aboutName}
       </h3>
       <div className="pt-1 pb-8">
