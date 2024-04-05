@@ -20,7 +20,7 @@ export default function Hero({ theHero }) {
               </button>
           </div>
           <div>
-             <Image src={`https:${hero.fields.file.url}`} width={400} height={400} alt="hello"className=" xl:ml-10" /> 
+             <Image src={`https:${hero.fields.file.url}`} width={400} height={400} alt="hello"className="mx-auto xl:ml-10" /> 
           </div>
           
           
