@@ -60,8 +60,10 @@ export default function Home({ theHeroSection, aboutMe, skill, project }) {
 
         <div className=" bg-gray-100 pb-20">
           <div className="xl:max-w-[1100px] xl:mx-auto 2xl:max-w-[1100px] 2xl:mx-auto">
-            <h1 className="font-bold text-sm text-center py-5">Technical Knowledge</h1>
-            <h1 className="font-bold text-center pb-5 mb-6 text-3xl xl:text-4xl bg-gradient-to-r from-black to-slateBlue text-transparent bg-clip-text ">
+            <h1 className="font-bold text-sm text-center py-5">
+              Technical Knowledge
+            </h1>
+            <h1 className="font-bold text-center pb-5 mb-6 text-3xl xl:text-4xl bg-gradient-to-r from-black via-slateBlue to-lavender text-transparent bg-clip-text ">
               My Skills
             </h1>
             <div className="grid grid-cols-4 gap-y-3 xl:grid-cols-8">
@@ -74,7 +76,7 @@ export default function Home({ theHeroSection, aboutMe, skill, project }) {
 
         <div className="py-10 xl:max-w-[1100px] xl:mx-auto 2xl:max-w-[1200px] 2xl:mx-auto">
           <h1 className="font-bold text-sm text-center py-5">My Work</h1>
-          <h1 className="font-bold text-center pb-7 xl:pb-14 text-2xl xl:text-4xl bg-gradient-to-r from-black to-slateBlue text-transparent bg-clip-text ">
+          <h1 className="font-bold text-center pb-7 xl:pb-14 text-2xl xl:text-4xl bg-gradient-to-r from-black via-slateBlue to-lavender text-transparent bg-clip-text ">
             Recent Projects
           </h1>
           <div className="grid grid-cols-2 gap-3 xl:grid-cols-4 px-3 xl:px-6 xl:gap-5 ">
