@@ -49,35 +49,45 @@ export default function Home({ theHeroSection, aboutMe, skill, project }) {
         ))}
       </div>
 
-      <div className="bg-gray-100">
-        {aboutMe.map((myInfo) => (
-          <About key={myInfo.sys.id} myInfo={myInfo} />
-        ))}
-      </div>
-      <div className=" bg-gray-100 pb-20">
-        <h1 className="font-bold text-center pb-5 text-1xl xl:text-4xl bg-gradient-to-r from-black to-slateBlue text-transparent bg-clip-text ">
-          My Skills
-        </h1>
-        <div className="grid grid-cols-4 gap-y-3 xl:grid-cols-8">
-          {skill.map((mySkills) => (
-            <Skills key={mySkills.sys.id} mySkills={mySkills} />
-          ))}
+      <div className="">
+        <div className="bg-gray-100">
+          <div className="xl:max-w-[1100px] xl:mx-auto 2xl:max-w-[1200px] 2xl:mx-auto">
+            {aboutMe.map((myInfo) => (
+              <About key={myInfo.sys.id} myInfo={myInfo} />
+            ))}
+          </div>
         </div>
-      </div>
 
-      <div className="py-10">
-        <h1 className="font-bold text-center pb-14 text-1xl xl:text-4xl bg-gradient-to-r from-black to-slateBlue text-transparent bg-clip-text ">
-          Recent Projects
-        </h1>
-        <div className="grid grid-cols-2 gap-3 xl:grid-cols-4 px-3 xl:px-6 ">
-          {project.map((eachProject) => (
-            <ProjectCard key={eachProject.sys.id} eachProject={eachProject} />
-          ))}
+        <div className=" bg-gray-100 pb-20">
+          <div className="xl:max-w-[1100px] xl:mx-auto 2xl:max-w-[1100px] 2xl:mx-auto">
+            <h1 className="font-bold text-center pb-5 text-1xl xl:text-4xl bg-gradient-to-r from-black to-slateBlue text-transparent bg-clip-text ">
+              My Skills
+            </h1>
+            <div className="grid grid-cols-4 gap-y-3 xl:grid-cols-8">
+              {skill.map((mySkills) => (
+                <Skills key={mySkills.sys.id} mySkills={mySkills} />
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div className="bg-gray-100 ">
-        <Contact />
+        <div className="py-10 xl:max-w-[1100px] xl:mx-auto 2xl:max-w-[1200px] 2xl:mx-auto">
+          <h1 className="font-bold text-center pb-7 xl:pb-14 text-1xl xl:text-4xl bg-gradient-to-r from-black to-slateBlue text-transparent bg-clip-text ">
+            Recent Projects
+          </h1>
+          <div className="grid grid-cols-2 gap-3 xl:grid-cols-4 px-3 xl:px-6 xl:gap-5 ">
+            {project.map((eachProject) => (
+              <ProjectCard key={eachProject.sys.id} eachProject={eachProject} />
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-gray-100 ">
+          <div className="">
+             <Contact />
+          </div>
+         
+        </div>
       </div>
     </div>
   );

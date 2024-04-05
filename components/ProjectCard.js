@@ -9,17 +9,15 @@ export default function ProjectCard({ eachProject }) {
     } = eachProject.fields
     return (
       <div id="projects">
-        <Image
+       <a href={projectLink} target='blank' className='pointer'><Image
           src={`https:${projectImage.fields.file.url}`}
           width={400}
           height={400}
           alt="hello"
-          className="rounded-xl"
+          className="rounded-xl shadow-md"
         />
-        <h1>{projectTitle}</h1>
-        <p className="pt-1 pb-8">
-          {projectDescription}
-        </p>
+        <h1 className='font-bold text-xs xl:text-sm py-2 px-1 text-slateBlue hover:opacity-50'>{projectTitle}</h1></a> 
+       
       </div>
     );
 }
