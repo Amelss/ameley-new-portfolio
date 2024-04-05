@@ -41,7 +41,7 @@ export default function Hero({ theHero }) {
           width={400}
           height={400}
           alt="hello"
-          className="mx-auto xl:ml-10"
+          className="mx-auto mt-6 xl:mt-0 xl:ml-10"
         />
       </div>
     </div>
