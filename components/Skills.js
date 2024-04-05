@@ -5,6 +5,7 @@ export default function Skills({ mySkills }) {
   const { skillTitle, skillImage } = mySkills.fields;
     return (
       <div className="" id="skills">
+       
         <Image
           src={`https:${skillImage.fields.file.url}`}
           width={50}

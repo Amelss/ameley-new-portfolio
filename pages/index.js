@@ -54,19 +54,28 @@ export default function Home({ theHeroSection, aboutMe, skill, project }) {
           <About key={myInfo.sys.id} myInfo={myInfo} />
         ))}
       </div>
-
-      <div className="grid grid-cols-4 gap-y-3 xl:grid-cols-8 bg-gray-100">
-        {skill.map((mySkills) => (
-          <Skills key={mySkills.sys.id} mySkills={mySkills} />
-        ))}
+      <div className=" bg-gray-100 pb-20">
+        <h1 className="font-bold text-center pb-5 text-1xl xl:text-4xl bg-gradient-to-r from-black to-slateBlue text-transparent bg-clip-text ">
+          My Skills
+        </h1>
+        <div className="grid grid-cols-4 gap-y-3 xl:grid-cols-8">
+          {skill.map((mySkills) => (
+            <Skills key={mySkills.sys.id} mySkills={mySkills} />
+          ))}
+        </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 xl:grid-cols-4 px-3">
-        {project.map((eachProject) => (
-          <ProjectCard key={eachProject.sys.id} eachProject={eachProject} />
-        ))}
+      <div className="py-10">
+        <h1 className="font-bold text-center pb-14 text-1xl xl:text-4xl bg-gradient-to-r from-black to-slateBlue text-transparent bg-clip-text ">
+          Recent Projects
+        </h1>
+        <div className="grid grid-cols-2 gap-3 xl:grid-cols-4 px-3 xl:px-6 ">
+          {project.map((eachProject) => (
+            <ProjectCard key={eachProject.sys.id} eachProject={eachProject} />
+          ))}
+        </div>
       </div>
-      
+
       <div className="bg-gray-100 ">
         <Contact />
       </div>
