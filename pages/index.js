@@ -75,7 +75,7 @@ export default function Home({ theHeroSection, aboutMe, skill, project }) {
           </div>
         </div>
 
-        <div className="py-10 xl:max-w-[1100px] xl:mx-auto 2xl:max-w-[1200px] 2xl:mx-auto">
+        <div className="py-10 xl:max-w-[1100px] xl:mx-auto 2xl:max-w-[1200px] 2xl:mx-auto ">
           <h1 className="font-bold text-sm text-center py-5">My Work</h1>
           <h1 className="font-bold text-center pb-7 xl:pb-14 text-2xl xl:text-4xl bg-gradient-to-r from-black to-slateBlue text-transparent bg-clip-text ">
             Recent Projects

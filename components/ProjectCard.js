@@ -12,7 +12,7 @@ export default function ProjectCard({ eachProject }) {
   } = eachProject.fields;
 
   return (
-    <div id="projects">
+    <div id="projects" className="mx-auto">
       <a href={projectLink} target="blank" className="pointer">
         <Image
           src={`https:${projectImage.fields.file.url}`}
