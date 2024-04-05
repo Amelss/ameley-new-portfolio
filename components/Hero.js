@@ -13,7 +13,7 @@ export default function Hero({ theHero }) {
         <h1 className="font-bold text-2xl xl:text-5xl bg-gradient-to-r from-black via-slateBlue to-lavender text-transparent bg-clip-text">
           {title}
         </h1>
-        <p className="xl:w-[500px] py-8">{subtitle}</p>
+        <p className="xl:w-[500px] py-8 xl:text-lg">{subtitle}</p>
         <button className="flex items-center bg-slateBlue rounded-lg px-3 py-2 mx-auto xl:mx-0">
           <div>
             <Image
