@@ -7,7 +7,7 @@ export default function ProjectCard({ eachProject }) {
         projectTitle, projectImage, projectDescription, projectLink
     } = eachProject.fields
     return (
-      <div>
+      <div id='projects'>
         
         <Image
           src={`https:${projectImage.fields.file.url}`}

@@ -3,6 +3,8 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import ProjectCard from "@/components/ProjectCard";
+import Contact from "@/components/Contact";
+
 
 export async function getStaticProps() {
   const client = createClient({
@@ -47,13 +49,13 @@ export default function Home({ theHeroSection, aboutMe, skill, project }) {
         ))}
       </div>
 
-      <div className="">
+      <div className="bg-gray-100">
         {aboutMe.map((myInfo) => (
           <About key={myInfo.sys.id} myInfo={myInfo} />
         ))}
       </div>
 
-      <div className="grid grid-cols-4 gap-y-3 xl:grid-cols-8">
+      <div className="grid grid-cols-4 gap-y-3 xl:grid-cols-8 bg-gray-100">
         {skill.map((mySkills) => (
           <Skills key={mySkills.sys.id} mySkills={mySkills} />
         ))}
@@ -63,6 +65,10 @@ export default function Home({ theHeroSection, aboutMe, skill, project }) {
         {project.map((eachProject) => (
           <ProjectCard key={eachProject.sys.id} eachProject={eachProject} />
         ))}
+      </div>
+      
+      <div className="bg-gray-100">
+        <Contact />
       </div>
     </div>
   );
