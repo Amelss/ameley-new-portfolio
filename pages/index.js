@@ -67,7 +67,7 @@ export default function Home({ theHeroSection, aboutMe, skill, project }) {
         ))}
       </div>
       
-      <div className="bg-gray-100">
+      <div className="bg-gray-100 ">
         <Contact />
       </div>
     </div>

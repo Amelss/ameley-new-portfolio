@@ -14,7 +14,7 @@ export default function ProjectCard({ eachProject }) {
           width={400}
           height={400}
           alt="hello"
-            />
+            className='rounded-xl'/>
             <h1>{projectTitle}</h1>
 
 
