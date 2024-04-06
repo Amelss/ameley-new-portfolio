@@ -1,8 +1,6 @@
-
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function Contact() {
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -13,27 +11,33 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
- const handleSubmit = async (e) => {
-   e.preventDefault();
-   try {
-     await fetch(
-       "https://31esoebsik.execute-api.eu-west-2.amazonaws.com/Staging/submitForm",
-       {
-         method: "POST",
-         headers: {
-           "Content-Type": "application/json",
-         },
-         body: JSON.stringify(formData),
-       }
-     );
-     alert("Form submitted successfully");
-     setFormData({ name: "", email: "", message: "" });
-   } catch (error) {
-     console.error("Error:", error);
-     alert("An error occurred while submitting the form");
-   }
- };
-
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(
+        "https://31esoebsik.execute-api.eu-west-2.amazonaws.com/Staging/submitForm",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+      const data = await response.json();
+      if (response.ok) {
+        alert(data.message);
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        throw new Error(
+          data.message || "An error occurred while submitting the form"
+        );
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert(error.message || "An error occurred while submitting the form");
+    }
+  };
 
   return (
     <div id="contact" className="px-5 rounded-lg xl:w-[800px] xl:mx-auto py-14">
@@ -56,8 +60,10 @@ export default function Contact() {
               <input
                 type="text"
                 id="name"
+                name="name"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2"
                 placeholder="Sarah Dore"
+                value={formData.name}
                 onChange={handleChange}
                 required
               />
@@ -72,8 +78,10 @@ export default function Contact() {
               <input
                 type="email"
                 id="email"
+                name="email"
                 className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 "
                 placeholder="hello@gmail.com"
+                value={formData.email}
                 onChange={handleChange}
                 required
               />
@@ -87,8 +95,10 @@ export default function Contact() {
               </label>
               <textarea
                 id="message"
+                name="message"
                 rows="6"
                 className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
+                value={formData.message}
                 onChange={handleChange}
                 placeholder="Leave a comment..."
                 required
@@ -105,4 +115,4 @@ export default function Contact() {
       </section>
     </div>
   );
-};
+}
