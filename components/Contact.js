@@ -45,7 +45,7 @@ export default function Contact() {
           <form className="space-y-8" onSubmit={handleSubmit}>
             <div>
               <label
-                htmlFor="email"
+                htmlFor="name"
                 className="block mb-2 text-sm font-medium text-gray-900 "
               >
                 Your Name
@@ -55,14 +55,13 @@ export default function Contact() {
                 id="name"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2"
                 placeholder="Sarah Dore"
-                value={formData.name}
                 onChange={handleChange}
                 required
               />
             </div>
             <div>
               <label
-                htmlFor="subject"
+                htmlFor="email"
                 className="block mb-2 text-sm font-medium text-gray-900 "
               >
                 Your email
@@ -72,7 +71,6 @@ export default function Contact() {
                 id="email"
                 className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 "
                 placeholder="hello@gmail.com"
-                value={formData.email}
                 onChange={handleChange}
                 required
               />
@@ -88,7 +86,6 @@ export default function Contact() {
                 id="message"
                 rows="6"
                 className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
-                value={formData.message}
                 onChange={handleChange}
                 placeholder="Leave a comment..."
                 required
