@@ -15,7 +15,7 @@ export default function Contact() {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://31esoebsik.execute-api.eu-west-2.amazonaws.com/Staging/submitForm",
+        "/api/submitForm",
         {
           method: "POST",
           headers: {
