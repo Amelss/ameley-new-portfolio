@@ -16,13 +16,16 @@ export default function Contact() {
  const handleSubmit = async (e) => {
    e.preventDefault();
    try {
-     await fetch("/api/submitForm", {
-       method: "POST",
-       headers: {
-         "Content-Type": "application/json",
-       },
-       body: JSON.stringify(formData),
-     });
+     await fetch(
+       "https://31esoebsik.execute-api.eu-west-2.amazonaws.com/Staging/submitForm",
+       {
+         method: "POST",
+         headers: {
+           "Content-Type": "application/json",
+         },
+         body: JSON.stringify(formData),
+       }
+     );
      alert("Form submitted successfully");
      setFormData({ name: "", email: "", message: "" });
    } catch (error) {
