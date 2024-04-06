@@ -1,6 +1,37 @@
-import React from 'react'
+
+import { useState } from 'react';
 
 export default function Contact() {
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+ const handleSubmit = async (e) => {
+   e.preventDefault();
+   try {
+     await fetch("/api/submitForm", {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+       },
+       body: JSON.stringify(formData),
+     });
+     alert("Form submitted successfully");
+     setFormData({ name: "", email: "", message: "" });
+   } catch (error) {
+     console.error("Error:", error);
+     alert("An error occurred while submitting the form");
+   }
+ };
+
+
   return (
     <div id="contact" className="px-5 rounded-lg xl:w-[800px] xl:mx-auto py-14">
       <section className=" bg-white rounded-lg shadow-lg">
@@ -11,7 +42,7 @@ export default function Contact() {
           <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
             Want to connect? Please drop me a message below!
           </p>
-          <form action="#" className="space-y-8">
+          <form className="space-y-8" onSubmit={handleSubmit}>
             <div>
               <label
                 htmlFor="email"
@@ -24,6 +55,8 @@ export default function Contact() {
                 id="name"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2"
                 placeholder="Sarah Dore"
+                value={formData.name}
+                onChange={handleChange}
                 required
               />
             </div>
@@ -39,6 +72,8 @@ export default function Contact() {
                 id="email"
                 className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 "
                 placeholder="hello@gmail.com"
+                value={formData.email}
+                onChange={handleChange}
                 required
               />
             </div>
@@ -53,7 +88,10 @@ export default function Contact() {
                 id="message"
                 rows="6"
                 className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Leave a comment..."
+                required
               ></textarea>
             </div>
             <button
