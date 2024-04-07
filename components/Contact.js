@@ -15,13 +15,16 @@ export default function Contact() {
    e.preventDefault();
    try {
      
-     const response = await fetch("/api/submitForm", {
-       method: "POST",
-       headers: {
-         "Content-Type": "application/json",
-       },
-       body: JSON.stringify(formData),
-     });
+     const response = await fetch(
+       "https://n95tygzew4.execute-api.eu-west-2.amazonaws.com/deployment/submitForm",
+       {
+         method: "POST",
+         headers: {
+           "Content-Type": "application/json",
+         },
+         body: JSON.stringify(formData),
+       }
+     );
      const data = await response.json();
      alert(data.message);
      setFormData({ name: "", email: "", message: "" });
