@@ -1,38 +1,42 @@
 import { useState } from "react";
 
 export default function Contact() {
- const [formData, setFormData] = useState({
-   name: "",
-   email: "",
-   message: "",
- });
+const [formData, setFormData] = useState({
+  name: "",
+  email: "",
+  message: "",
+});
+const [error, setError] = useState(null);
 
- const handleChange = (e) => {
-   setFormData({ ...formData, [e.target.name]: e.target.value });
- };
+const handleChange = (e) => {
+  setFormData({ ...formData, [e.target.name]: e.target.value });
+};
 
- const handleSubmit = async (e) => {
-   e.preventDefault();
-   try {
-     
-     const response = await fetch(
-       "https://xticfiaas5.execute-api.eu-west-2.amazonaws.com/deployment/submitForm",
-       {
-         method: "POST",
-         headers: {
-           "Content-Type": "application/json",
-         },
-         body: JSON.stringify(formData),
-       }
-     );
-     const data = await response.json();
-     alert(data.message);
-     setFormData({ name: "", email: "", message: "" });
-   } catch (error) {
-     console.error("Error:", error);
-     alert("An error occurred while submitting the form");
-   }
- };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await fetch(
+      "https://xticfiaas5.execute-api.eu-west-2.amazonaws.com/deployment/submitForm",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    );
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    alert(data.message);
+    setFormData({ name: "", email: "", message: "" });
+    setError(null);
+  } catch (error) {
+    console.error("Error:", error);
+    setError("An error occurred while submitting the form");
+  }
+};
 
   return (
     <div id="contact" className="px-5 rounded-lg xl:w-[800px] xl:mx-auto py-14">
