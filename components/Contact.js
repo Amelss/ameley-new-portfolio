@@ -1,43 +1,35 @@
 import { useState } from "react";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+ const [formData, setFormData] = useState({
+   name: "",
+   email: "",
+   message: "",
+ });
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+ const handleChange = (e) => {
+   setFormData({ ...formData, [e.target.name]: e.target.value });
+ };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch(
-        "/api/submitForm",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
-      const data = await response.json();
-      if (response.ok) {
-        alert(data.message);
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        throw new Error(
-          data.message || "An error occurred while submitting the form"
-        );
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      alert(error.message || "An error occurred while submitting the form");
-    }
-  };
+ const handleSubmit = async (e) => {
+   e.preventDefault();
+   try {
+     
+     const response = await fetch("/api/submitForm", {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+       },
+       body: JSON.stringify(formData),
+     });
+     const data = await response.json();
+     alert(data.message);
+     setFormData({ name: "", email: "", message: "" });
+   } catch (error) {
+     console.error("Error:", error);
+     alert("An error occurred while submitting the form");
+   }
+ };
 
   return (
     <div id="contact" className="px-5 rounded-lg xl:w-[800px] xl:mx-auto py-14">
