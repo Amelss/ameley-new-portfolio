@@ -29,9 +29,9 @@ const handleSubmit = async (e) => {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const data = await response.json();
-    alert(data.message);
+    alert("Thank you! This form has been successfully submitted");
     setFormData({ name: "", email: "", message: "" });
-    setError(null);
+    
   } catch (error) {
     console.error("Error:", error);
     setError("An error occurred while submitting the form");
