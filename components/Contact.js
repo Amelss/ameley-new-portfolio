@@ -22,7 +22,7 @@ const handleSubmit = async (e) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ body: JSON.stringify(formData) }),
       }
     );
     if (!response.ok) {
