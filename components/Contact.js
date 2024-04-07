@@ -16,7 +16,7 @@ export default function Contact() {
    try {
      
      const response = await fetch(
-       "https://n95tygzew4.execute-api.eu-west-2.amazonaws.com/deployment/submitForm",
+       "https://xticfiaas5.execute-api.eu-west-2.amazonaws.com/deployment/submitForm",
        {
          method: "POST",
          headers: {
